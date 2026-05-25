@@ -59,7 +59,7 @@ h1 {
 }
 
 button {
-    padding: 12px 30px;
+    padding: 5px 15px;
     font-size: 16px;
     font-weight: bold;
     border: none;
@@ -143,8 +143,8 @@ button:disabled {
 
 input[type="date"],
 input[type="time"] {
-    padding: 12px 16px;
-    font-size: 16px;
+    padding: 4px 6px;
+    font-size: 11px;
     border: 2px solid #2196F3;
     border-radius: 8px;
     font-family: 'Comic Sans MS', sans-serif;
@@ -188,8 +188,8 @@ input[type="time"]:focus {
 .confirm-btn {
     background: #FF9800;
     color: white;
-    padding: 10px 25px;
-    font-size: 14px;
+    padding: 6px 15px;
+    font-size: 12px;
 }
 
 .confirm-btn:hover {
