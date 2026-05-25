@@ -14,35 +14,28 @@ function mostrarData() {
 }
 
 function confirmarData() {
-    const data = document.getElementById('dataEscolhida').value;
+    const horario = document.getElementById('dataEscolhida').value;
     
-    if (!data) {
-        alert('Por favor, escolha uma data! 📅');
+    if (!horario) {
+        alert('Por favor, escolha um horário! ⏰');
         return;
     }
 
-    // Formatar a data
-    const dataObj = new Date(data);
-    const diasSemana = ['domingo', 'segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado'];
-    const meses = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
+    // Formatar o horário
+    const [horas, minutos] = horario.split(':');
+    const horarioFormatado = `${horas}:${minutos}`;
+
+    // Criar mensagem para o WhatsApp
+    const mensagem = `Oi josé gatão lindão, vamos sair no horário ${horarioFormatado}`;
     
-    const dia = dataObj.getDate();
-    const mes = meses[dataObj.getMonth()];
-    const ano = dataObj.getFullYear();
-    const diaSemana = diasSemana[dataObj.getDay()];
-
-    const dataFormatada = `${diaSemana}, ${dia} de ${mes} de ${ano}`;
-
-    document.getElementById('dataConfirmada').textContent = dataFormatada;
-    document.getElementById('resultado').classList.add('show');
-    document.getElementById('dateSection').classList.remove('show');
-
-    // Desabilita todos os botões permanentemente
-    document.querySelectorAll('button').forEach(btn => {
-        btn.disabled = true;
-    });
-
-    dataConfirmada = true;
+    // Codificar a mensagem para URL
+    const mensagemCodificada = encodeURIComponent(mensagem);
+    
+    // Redirecionar para WhatsApp
+    const numeroWhatsapp = '34999915174';
+    const urlWhatsapp = `https://wa.me/${numeroWhatsapp}?text=${mensagemCodificada}`;
+    
+    window.location.href = urlWhatsapp;
 }
 
 function moverBotaoNao() {
@@ -70,20 +63,8 @@ function rejeitarConvite() {
     moverBotaoNao();
 }
 
-// Impedir que a data seja menor que hoje
-document.getElementById('dataEscolhida').addEventListener('change', function() {
-    const hoje = new Date().toISOString().split('T')[0];
-    if (this.value < hoje) {
-        alert('Por favor, escolha uma data no futuro! 📅');
-        this.value = '';
-    }
-});
-
 // Definir data mínima como hoje
 window.addEventListener('load', function() {
-    const hoje = new Date().toISOString().split('T')[0];
-    document.getElementById('dataEscolhida').min = hoje;
-
     // Adicionar event listener ao botão "não"
     const botaoNao = document.querySelector('.btn-nao');
     let timerId = null;
