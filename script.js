@@ -67,7 +67,7 @@ function voltarBotaoNao() {
 }
 
 function rejeitarConvite() {
-    alert('Tudo bem... 😢 Talvez numa próxima oportunidade! 💔');
+    moverBotaoNao();
 }
 
 // Impedir que a data seja menor que hoje
