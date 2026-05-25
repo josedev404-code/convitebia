@@ -267,8 +267,8 @@ input[type="time"]:focus {
 
     input[type="date"],
     input[type="time"] {
-        padding: 14px 12px;
-        font-size: 16px;
+        padding: 6px 8px;
+        font-size: 12px;
         margin-bottom: 15px;
         width: 100%;
         display: block;
