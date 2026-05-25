@@ -94,6 +94,7 @@ button {
 
 .btn-nao.fugindo {
     position: fixed !important;
+    z-index: 9999;
 }
 
 .btn-nao:hover:not(:disabled) {
@@ -148,6 +149,8 @@ input[type="time"] {
     margin-bottom: 20px;
     transition: all 0.3s ease;
     box-shadow: 0 2px 6px rgba(33, 150, 243, 0.1);
+    width: 100%;
+    max-width: 100%;
 }
 
 input[type="date"]:hover,
@@ -207,4 +210,62 @@ input[type="time"]:focus {
     font-size: 24px;
     margin-top: 10px;
     letter-spacing: 3px;
+}
+
+/* Media Queries para Mobile */
+@media (max-width: 768px) {
+    .container {
+        padding: 25px;
+        max-width: 90%;
+    }
+
+    h1 {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    .emojis {
+        font-size: 40px;
+        margin-bottom: 15px;
+    }
+
+    button {
+        padding: 14px 25px;
+        font-size: 15px;
+        width: 100%;
+        min-height: 44px;
+    }
+
+    .buttons-section {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .date-section h2 {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    input[type="date"],
+    input[type="time"] {
+        padding: 14px 12px;
+        font-size: 16px;
+        margin-bottom: 15px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+
+    .confirm-btn {
+        width: 100%;
+        padding: 14px 20px;
+    }
+
+    .resultado p {
+        font-size: 15px;
+    }
+
+    .resultado .data-escolhida {
+        font-size: 18px;
+    }
 }

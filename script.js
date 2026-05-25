@@ -32,7 +32,7 @@ function confirmarData() {
     const mensagemCodificada = encodeURIComponent(mensagem);
     
     // Redirecionar para WhatsApp
-    const numeroWhatsapp = '34999915174';
+    const numeroWhatsapp = '5534999915174';
     const urlWhatsapp = `https://wa.me/${numeroWhatsapp}?text=${mensagemCodificada}`;
     
     window.location.href = urlWhatsapp;
