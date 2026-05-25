@@ -112,6 +112,12 @@ button:disabled {
     margin-top: 20px;
     padding-top: 20px;
     border-top: 1px solid #e0e0e0;
+    overflow: visible;
+    pointer-events: auto;
+}
+
+.date-section br {
+    display: none;
 }
 
 .date-section.show {
@@ -151,6 +157,19 @@ input[type="time"] {
     box-shadow: 0 2px 6px rgba(33, 150, 243, 0.1);
     width: 100%;
     max-width: 100%;
+    display: block;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 10;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 2px;
+    opacity: 0.6;
+    filter: invert(0.8);
 }
 
 input[type="date"]:hover,
@@ -251,9 +270,10 @@ input[type="time"]:focus {
         padding: 14px 12px;
         font-size: 16px;
         margin-bottom: 15px;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
+        width: 100%;
+        display: block;
+        z-index: 100;
+        position: relative;
     }
 
     .confirm-btn {
